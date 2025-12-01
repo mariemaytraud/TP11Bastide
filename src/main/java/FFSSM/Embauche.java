@@ -11,9 +11,24 @@ public class Embauche {
 
     private LocalDate fin;
 
+    private final DiplomeDeMoniteur employe;
+    private final Club employeur;
+
     public Embauche(LocalDate debut, DiplomeDeMoniteur employe, Club employeur) {
         this.debut = debut;
+        this.employe = employe;
+        this.employeur = employeur;
     }
 
-    
+    public Club getEmployeur() {
+        return employeur;
+    }
+
+    public void terminer(LocalDate fin) {
+        this.fin = fin;
+    }
+
+    public boolean estTerminee() {
+        return fin != null;
+    }
 }
